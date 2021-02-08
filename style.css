@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --White: hsl(0, 0%, 100%);
+    --Black: hsl(0, 0%, 0%);
+    --Dark-Gray: hsl(0, 0%, 55%);
+    --Very-Dark-Gray: hsl(0, 0%, 41%);
+}
+
+html{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+}
+h1,h2,h3,h4{
+    font-family: 'Josefin Sans', sans-serif;
+}
+h2,h3{
+    font-size: 3vw;
+}
+.title{
+    font-size: 5vw;
+}
+
+
+@media(max-width: 820px){
+    .title{
+        font-size: 10.3vw;
+    }
+    
+    h2,h3{
+        font-size: 8vw;
+    }
+    h4{
+        font-size: 6vw;
+    }
+    .nav li{
+        font-size: 9vw;
+    }
+}
+/*----------------Bar Navegation-----------*/
+
+.presentation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 630px;
+    background: url(./images/desktop/image-hero.jpg) no-repeat;
+    
+}
+@media(max-width: 450px){
+    .presentation{
+        background: url(./images/mobile/image-hero.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+}
+
+header{
+    width: 85%;
+    height: 8em;
+    display: flex;
+    align-items: center;
+}
+.box-logo{
+    display: flex;
+    align-items:center;
+    z-index: 99;
+}
+@media(max-width: 450px){
+    .box-logo img{
+        width: 150px;
+    }
+}
+.nav-bar{
+    width: 100%;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 420px;
+    font-family: 'Alata', sans-serif;
+}
+
+.nav li, .nav a{
+    list-style: none;
+    text-decoration: none;
+    color: var(--White);
+}
+.nav > li > a:after{
+    content: "";
+    display: block;
+    margin: auto;
+    height: 1px;
+    width: 0px;
+    transition: .3s;
+}
+.nav > li > a:hover:after {
+    width: 100%;
+    background: var(--White);
+}
+.burger{
+    display: none;
+}
+
+/*-------------Hamburger Menu-----------*/
+@media(max-width: 820px){
+    .burger{
+        display: flex;
+        height: 15px;
+        flex-direction: column;
+        justify-content: space-between;
+        z-index: 99;
+        cursor: pointer;
+
+    }
+    .bar1, .bar2, .bar3{
+        width: 25px;
+        height: 3px;
+        background: var(--White);
+        transform: translate(0deg);
+        transition: 5s;
+    }
+    .show.bar1{
+        left: 10px;
+        transform: translate(45deg);
+    }
+    
+    .menu-nav{
+        top: 0;
+        right: -100%;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 2em;
+        width: 100%;
+        height: 100vh;
+        background: var(--Black);
+        transition: all 1s ease-out;
+        opacity: 0;
+    }
+  
+    .show.menu-nav{
+        transform: translateX(-100%);
+        opacity: 1;
+        position: fixed;
+    }
+    
+    .menu-nav li{
+        padding: 1vh 0;
+
+        font-family: 'Josefin Sans', sans-serif;
+    }
+    
+}
+
+
+/*-----The fist title of the website--------*/
+ .title-box{
+    display: flex;
+    align-items: center;
+    width: 85%;
+    height: 70vh;
+}
+    
+.title{
+    font-weight: 300;
+    color: var(--White);
+    border: 2px solid var(--White);
+    padding: 25px;
+    max-width: 55%;
+}
+
+/*_____Media Title_____*/
+@media(max-width: 820px){
+    .title-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70vh;  
+        width: 100%;
+    }
+    
+    .title{
+        font-size: 10.3vw;
+        font-weight: 300;
+        color: var(--White);
+        border: 2px solid var(--White);
+        padding: 20px;
+        max-width: 85%;
+    }
+    
+}
+    
+/*--------------Section Description (About)--------------------*/
+.description-section{
+    width: 100%;
+    height: 650px;
+    background-color:var(--White);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box-description{
+    position: relative;
+    width: 80%;
+    height: 480px;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+}
+.img-purple{
+    position:absolute;
+    top:0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+    background: url(./images/desktop/image-interactive.jpg) no-repeat;
+}
+.description{
+    width: 50%;
+    height: 300px;
+    padding: 0 0 0 80px;
+    background: var(--White);
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-start;
+    z-index: 2;
+}
+.description h2{
+    font-size: 3.2vw;
+    padding-bottom: 20px;
+}
+.description p{
+    font-size: 15px;
+    width: 90%;
+}
+/*________Media descriptiton_______*/
+@media(max-width:820px){
+    .description-section{
+        height: 630px;
+    }
+    .box-description{
+        background-size: 100% 50%;
+        justify-content: center;
+        height: 480px;
+        
+    }
+    .img-purple{
+        display: block;
+        width: 100%;
+        height: 40%;
+        background: url(./images/mobile/image-interactive.jpg) no-repeat;
+        background-size: 100% 100%;
+    }
+    .description{
+        width: 80%;
+        height: 60%;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .description h2{
+        font-size: 1.5em;
+    }
+}
+
+
+/*------------------Section Grid--------------*/
+.our-creation-section{
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: space-around;
+}
+.our-creation{
+    width: 84%;
+    height: 1070px;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
+    grid-template-rows: 1fr 10fr;
+    grid-template-areas: 
+    "title button"
+    "photos photos";
+    align-items: center;
+    ;
+}
+.our-creation h3{
+    grid-area: title;
+    padding: 0;
+}
+.btn-grid{
+    grid-area: button;
+    width: 100px;
+    height: 30px;
+    background: var(--White);
+    border: 1px solid black;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+.btn-grid:hover{
+    background-color: var(--Black);
+    color: white;
+}
+.photos-grid{
+    display:grid;
+    grid-area: photos;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 430px 430px;
+    grid-gap: 35px;
+}
+/*_________Photos_____*/
+.photo1{background: url(./images/desktop/image-deep-earth.jpg)no-repeat;}
+.photo2{background: url(./images/desktop//image-night-arcade.jpg)no-repeat}
+.photo3{background: url(./images/desktop/image-soccer-team.jpg) no-repeat}
+.photo4{background: url(./images/desktop/image-grid.jpg) no-repeat}
+.photo5{background: url(./images/desktop/image-from-above.jpg) no-repeat}
+.photo6{background: url(./images/desktop/image-pocket-borealis.jpg)no-repeat}
+.photo7{background: url(./images/desktop/image-curiosity.jpg) no-repeat}
+.photo8{background: url(./images/desktop/image-fisheye.jpg) no-repeat}
+
+.photos{
+    display: flex;
+    align-items: end;
+    color: white;
+    padding: 20px;
+    text-decoration: none;
+    box-shadow: inset 0px -80px 150px black;
+    transition: .4s ease;
+}
+.photos:hover{
+    opacity: .5;
+}
+.text-photos{
+    font-weight: 200;
+    font-size: 25px;
+    text-decoration: none;
+}   
+/*________________MediaQuery Grid___________*/
+@media(max-width:820px){
+    .our-creation{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 10fr 1fr;
+        grid-gap: 20px;
+        grid-template-areas: 
+        "title"
+        "photos"
+        "button";
+        justify-content: center;
+        align-items: center;
+    }
+    .photos-grid{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        grid-gap: 15px;
+    }
+    .photos{
+        display: flex;
+        width: 100%;
+        color: white;
+        padding: 20px;
+        text-decoration: none;
+        box-shadow: inset 10px 10px 80px black;
+    }
+
+    .photo1{background: url(./images/mobile/image-deep-earth.jpg)no-repeat; background-size: 100% 100%;}
+    .photo2{background: url(./images/mobile//image-night-arcade.jpg)no-repeat; background-size: 100% 100%;}
+    .photo3{background: url(./images/mobile/image-soccer-team.jpg) no-repeat; background-size: 100% 100%;}
+    .photo4{background: url(./images/mobile/image-grid.jpg) no-repeat; background-size: 100% 100%;}
+    .photo5{background: url(./images/mobile/image-from-above.jpg) no-repeat; background-size: 100% 100%;}
+    .photo6{background: url(./images/mobile/image-pocket-borealis.jpg)no-repeat; background-size: 100% 100%;}
+    .photo7{background: url(./images/mobile/image-curiosity.jpg) no-repeat; background-size: 100% 100%;}
+    .photo8{background: url(./images/mobile/image-fisheye.jpg) no-repeat; background-size: 100% 100%;}
+
+    .btn-grid{
+        justify-self: center;
+    }
+    .our-creation h3{
+        justify-self: center;
+    }
+}
+/*-----------Footer-------------*/
+footer{
+    width: 100%;  
+    background: var(--Black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box-footer{
+    width: 85%;
+    padding: 30px 0;
+    min-height: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "logo redes"
+    "nav-bar derechos";
+
+}
+.box-logo{
+    grid-area: logo;
+}
+.redes-sociales{
+    grid-area: redes;
+    display: flex;
+    justify-self: end;
+    min-width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.nav-bottom{
+    grid-area: nav-bar;
+}
+.derechos{
+    grid-area: derechos;
+    color: var(--White);
+    justify-self: flex-end;
+    align-self: center;
+}
+
+
+/*_________Media Footer________*/
+@media(max-width: 821px){
+    .box-footer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-logo,.nav-bottom, .redes-sociales,.derechos{
+        padding: 10px 0;
+    }
+    .nav-bottom li{
+        font-size: 1em;
+        padding: 8px 0;
+    }
+    .nav-bottom{
+        flex-direction: column;
+    }
+}

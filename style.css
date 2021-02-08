@@ -325,15 +325,15 @@ header{
     grid-gap: 35px;
 }
 /*_________Photos_____*/
-.photo1{background: url(./images/desktop/image-deep-earth.jpg)no-repeat;}
-.photo2{background: url(./images/desktop//image-night-arcade.jpg)no-repeat}
-.photo3{background: url(./images/desktop/image-soccer-team.jpg) no-repeat}
-.photo4{background: url(./images/desktop/image-grid.jpg) no-repeat}
-.photo5{background: url(./images/desktop/image-from-above.jpg) no-repeat}
-.photo6{background: url(./images/desktop/image-pocket-borealis.jpg)no-repeat}
-.photo7{background: url(./images/desktop/image-curiosity.jpg) no-repeat}
-.photo8{background: url(./images/desktop/image-fisheye.jpg) no-repeat}
 
+.photo1{background: url(./images/desktop/image-deep-earth.jpg)no-repeat; background-size: 100% 100%;}
+.photo2{background: url(./images/desktop//image-night-arcade.jpg)no-repeat; background-size: 100% 100%;}
+.photo3{background: url(./images/desktop/image-soccer-team.jpg) no-repeat; background-size: 100% 100%;}
+.photo4{background: url(./images/desktop/image-grid.jpg) no-repeat; background-size: 100% 100%;}
+.photo5{background: url(./images/desktop/image-from-above.jpg) no-repeat; background-size: 100% 100%;}
+.photo6{background: url(./images/desktop/image-pocket-borealis.jpg)no-repeat; background-size: 100% 100%;}
+.photo7{background: url(./images/desktop/image-curiosity.jpg) no-repeat; background-size: 100% 100%;}
+.photo8{background: url(./images/desktop/image-fisheye.jpg) no-repeat; background-size: 100% 100%;}
 .photos{
     display: flex;
     align-items: end;

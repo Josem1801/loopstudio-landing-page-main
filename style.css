@@ -50,9 +50,11 @@ h2,h3{
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 630px;
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
     background: url(./images/desktop/image-hero.jpg) no-repeat;
-    
+    background-size: 100% 100%;
 }
 @media(max-width: 450px){
     .presentation{
@@ -70,7 +72,7 @@ header{
 .box-logo{
     display: flex;
     align-items:center;
-    z-index: 99;
+    z-index: 999;
 }
 @media(max-width: 450px){
     .box-logo img{
@@ -88,7 +90,7 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 420px;
+    width: 25em;
     font-family: 'Alata', sans-serif;
 }
 
@@ -137,9 +139,9 @@ header{
     }
     
     .menu-nav{
-        top: 0;
-        right: -100%;
         position: absolute;
+        top: 0;
+        left: -100%;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
@@ -150,16 +152,17 @@ header{
         transition: all 1s ease-out;
         opacity: 0;
     }
-  
+
+    
     .show.menu-nav{
-        transform: translateX(-100%);
+        transform: translateX(100%);
         opacity: 1;
+        z-index: 99;
         position: fixed;
     }
     
     .menu-nav li{
         padding: 1vh 0;
-
         font-family: 'Josefin Sans', sans-serif;
     }
     
@@ -229,19 +232,22 @@ header{
     background: url(./images/desktop/image-interactive.jpg) no-repeat;
 }
 .description{
+    position: absolute;
+    bottom: 0;
+    right: 0;
     width: 50%;
-    height: 300px;
-    padding: 0 0 0 80px;
+    height: 50%;
     background: var(--White);
     display: flex;
     flex-direction: column;
-    justify-content: end;
-    align-items: flex-start;
+    justify-content: flex-end;
+    align-items: flex-end;
     z-index: 2;
 }
 .description h2{
     font-size: 3.2vw;
     padding-bottom: 20px;
+    width: 90%;
 }
 .description p{
     font-size: 15px;
@@ -250,13 +256,12 @@ header{
 /*________Media descriptiton_______*/
 @media(max-width:820px){
     .description-section{
-        height: 630px;
+        height: 100vh;
     }
     .box-description{
         background-size: 100% 50%;
         justify-content: center;
-        height: 480px;
-        
+        width: 87.5%;
     }
     .img-purple{
         display: block;
@@ -266,7 +271,7 @@ header{
         background-size: 100% 100%;
     }
     .description{
-        width: 80%;
+        width: 100%;
         height: 60%;
         text-align: center;
         align-items: center;
@@ -356,7 +361,7 @@ header{
     .our-creation{
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 10fr 1fr;
+        grid-template-rows: .5fr 5fr 1fr;
         grid-gap: 20px;
         grid-template-areas: 
         "title"
@@ -414,7 +419,7 @@ footer{
     grid-template-areas: 
     "logo redes"
     "nav-bar derechos";
-
+    grid-gap: .8em;
 }
 .box-logo{
     grid-area: logo;
@@ -431,12 +436,14 @@ footer{
 
 .nav-bottom{
     grid-area: nav-bar;
+    width: 70%;
 }
 .derechos{
     grid-area: derechos;
     color: var(--White);
     justify-self: flex-end;
     align-self: center;
+    text-align: center;
 }
 
 
@@ -446,6 +453,10 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
+        grid-gap: 0;
+    }
+    .box-footer > .box-logo{
+        z-index: 1;
     }
     .box-logo,.nav-bottom, .redes-sociales,.derechos{
         padding: 10px 0;
@@ -453,8 +464,10 @@ footer{
     .nav-bottom li{
         font-size: 1em;
         padding: 8px 0;
+        
     }
     .nav-bottom{
         flex-direction: column;
+        
     }
 }
